@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --mad-black: #050505;
+}
+
+body {
+  background-color: var(--mad-black);
+  color: #a0a0a0;
+  overflow: hidden; /* スクロールを消して密閉感を出す */
+}
+
+/* 走査線（CRTモニターのような横線） */
+.scanline {
+  width: 100%;
+  height: 100px;
+  z-index: 30;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.02) 10%, rgba(0, 0, 0, 0.1) 100%);
+  opacity: 0.1;
+  position: absolute;
+  bottom: 100%;
+  animation: scanline 10s linear infinite;
+}
+
+@keyframes scanline {
+  0% { bottom: 100%; }
+  100% { bottom: -100%; }
+}
+
+/* 画面のチラつき（グリッチ） */
+.glitch {
+  animation: noise 2s linear infinite;
+}
+
+@keyframes noise {
+  0% { transform: translate(0,0) }
+  10% { transform: translate(-1px, -1px) }
+  20% { transform: translate(1px, 1px) }
+  30% { transform: translate(-1px, 1px) }
+  100% { transform: translate(0,0) }
+}
