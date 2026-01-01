@@ -127,7 +127,7 @@ function CryptInterface() {
         {/* Footer */}
         <footer className="mt-16 flex flex-col items-center gap-2 text-[10px] text-gray-700">
           <Activity size={12} className="text-gray-800" />
-          <p>© {new Date().getFullYear()} PrisonZero Core / <span className="text-gray-600">MadPunks Holdings</span></p>
+          <p>© {new Date().getFullYear()} PrisonZero Core / <span className="text-gray-600">MadPunks</span></p>
         </footer>
 
       </main>
